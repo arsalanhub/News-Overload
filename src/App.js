@@ -1,13 +1,13 @@
 import './App.css';
 
 import React, { Component } from 'react'
+import NavBar from './components/Navbar';
 
 export default class App extends Component {
   render() {
-    let value = "arsalan"
     return (
       <div>
-        Hello cbc {value}
+        <NavBar />
       </div>
     )
   }
