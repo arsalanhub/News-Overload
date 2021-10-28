@@ -12,14 +12,14 @@ export class News extends Component {
     }
     // This function will get executed after render()
     async componentDidMount() {
-        let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page}&pageSize=20`;
+        let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({articles: parsedData.articles, totalArticles: parsedData.totalResults})
     }
 
     handlePrevClick = async () => {
-        let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page-1}&pageSize=20`;
+        let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page-1}&pageSize=${this.props.pageSize}`;
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({articles: parsedData.articles})
@@ -30,10 +30,10 @@ export class News extends Component {
         })
     }
     handleNextClick = async () => {
-        if (this.state.page+1 > Math.ceil(this.state.totalResults/20)) {
+        if (this.state.page+1 > Math.ceil(this.state.totalResults/this.props.pageSize)) {
             
         } else {
-            let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page+1}&pageSize=20`;
+            let url = `https://newsapi.org/v2/everything?sources=techcrunch&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
             let data = await fetch(url);
             let parsedData = await data.json();
             this.setState({articles: parsedData.articles})
