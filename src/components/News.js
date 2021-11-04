@@ -63,7 +63,7 @@ export class News extends Component {
     render() {
         return (
             <div className="container my-3">
-                <h1 className="text-center">News Overload Top headlines</h1> 
+                <h1 className="text-center" style={{margin: "35px", marginTop: "70px"}}>News Overload Top headlines</h1> 
                 {/* If loading is true then we execute below code */}
                 {this.state.loading && <Spinner />}
                 <div className="row">
