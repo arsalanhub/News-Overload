@@ -14,13 +14,14 @@ export class News extends Component {
         pageSize: PropTypes.number,
         category: PropTypes.string,
     }
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             articles: [],
             loading: false,
             page: 1,
         }
+        document.title = `${this.props.category} - News Overload`;
     }
     async updateNews() {
         const url = `https://newsapi.org/v2/top-headlines?category=${this.props.category}&country=${this.props.country}&apiKey=fb6f90e95cca448fbb29f560dcd78ec6&page=${this.state.page}&pageSize=${this.props.pageSize}`;
@@ -47,7 +48,7 @@ export class News extends Component {
     render() {
         return (
             <div className="container my-3">
-                <h1 className="text-center" style={{margin: "35px", marginTop: "70px"}}>News Overload Top headlines</h1> 
+                <h1 className="text-center" style={{margin: "35px", marginTop: "70px"}}>News Overload Top headlines on {this.props.category}</h1> 
                 {/* If loading is true then we execute below code */}
                 {this.state.loading && <Spinner />}
                 <div className="row">
