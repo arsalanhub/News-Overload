@@ -25,7 +25,7 @@ const App = () => {
           progress={progress}
         />
         <Routes>
-          <Route exact path="/india" element={<News setProgress={setProgress} key="india" pageSize={pageSize} category="India" />} />          
+          <Route exact path="/india" element={<News setProgress={setProgress} key="india" pageSize={pageSize} category="india" />} />          
         </Routes>
       </Router>
     </div>

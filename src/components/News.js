@@ -42,7 +42,7 @@ const News = (props) => {
   return (
     <>
       <h1 className="text-center" style={{ margin: "35px", marginTop: "70px" }}>
-        News Overload Top headlines on {props.category}
+        News Overload Top headlines on {props.category.toUpperCase()}
       </h1>
       {/* If loading is true then we execute below code */}
       {loading && <Spinner />}
