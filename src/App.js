@@ -30,6 +30,7 @@ const App = () => {
           <Route exact path="/education" element={<News setProgress={setProgress} key="education" pageSize={pageSize} category="education" />} />
           <Route exact path="/political" element={<News setProgress={setProgress} key="political" pageSize={pageSize} category="political" />} />
           <Route exact path="/cities" element={<News setProgress={setProgress} key="cities" pageSize={pageSize} category="political" />} />
+          <Route exact path="/" element={<News setProgress={setProgress} key="education" pageSize={pageSize} category="education" />} />
         </Routes>
       </Router>
     </div>
