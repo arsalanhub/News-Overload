@@ -23,7 +23,7 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" aria-current="page" to="/">
+                <Link className="nav-link" aria-current="page" to="/education">
                   Home
                 </Link>
               </li>
@@ -34,19 +34,13 @@ const NavBar = () => {
                 <Link className="nav-link" to="/entertainment">Entertainment</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/general">General</Link>
+                <Link className="nav-link" to="/education">Education</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/health">Health</Link>
+                <Link className="nav-link" to="/political">Political</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/science">Science</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/sports">Sports</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/technology">Technology</Link>
+                <Link className="nav-link" to="/cities">Cities</Link>
               </li>
             </ul>
           </div>
